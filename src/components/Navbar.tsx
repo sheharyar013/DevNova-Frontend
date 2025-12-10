@@ -32,7 +32,7 @@ const Navbar = ({ isScrolled }: NavbarProps) => {
               <Code2 className="h-8 w-8 text-primary-500 group-hover:rotate-12 transition-transform" />
               <div className="absolute inset-0 bg-primary-500 blur-xl opacity-20 group-hover:opacity-40 transition-opacity" />
             </div>
-            <span className="text-2xl font-bold text-gradient">DevNove</span>
+            <span className="text-2xl font-bold text-gradient">DevNova</span>
           </a>
 
           {/* Desktop Menu */}
