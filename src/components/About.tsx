@@ -46,7 +46,7 @@ const About = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            About <span className="text-gradient">DevNove</span>
+            About <span className="text-gradient">DevNova</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We are a team of passionate developers, designers, and strategists dedicated to
@@ -76,7 +76,7 @@ const About = () => {
               Our Story
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Founded in 2016, DevNove has grown from a small startup to a trusted software
+              Founded in 2016, DevNova has grown from a small startup to a trusted software
               development partner for businesses worldwide. Our journey has been driven by a
               simple belief: technology should empower businesses, not complicate them.
             </p>
@@ -141,7 +141,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-3xl font-bold mb-6">
-                Why Choose DevNove?
+                Why Choose DevNova?
               </h3>
               <p className="text-gray-300 mb-8">
                 We combine technical excellence with business acumen to deliver solutions

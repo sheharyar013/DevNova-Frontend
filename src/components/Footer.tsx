@@ -42,7 +42,7 @@ const Footer = () => {
                 <Code2 className="h-8 w-8 text-primary-500 group-hover:rotate-12 transition-transform" />
                 <div className="absolute inset-0 bg-primary-500 blur-xl opacity-20 group-hover:opacity-40 transition-opacity" />
               </div>
-              <span className="text-2xl font-bold text-white">DevNove</span>
+              <span className="text-2xl font-bold text-white">DevNova</span>
             </a>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Transforming ideas into exceptional digital experiences. Your trusted partner
@@ -51,9 +51,9 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="mailto:hello@devnove.com" className="flex items-center space-x-3 text-gray-400 hover:text-primary-500 transition-colors">
+              <a href="mailto:hello@DevNova.com" className="flex items-center space-x-3 text-gray-400 hover:text-primary-500 transition-colors">
                 <Mail className="h-5 w-5" />
-                <span>hello@devnove.com</span>
+                <span>hello@DevNova.com</span>
               </a>
               <a href="tel:+15551234567" className="flex items-center space-x-3 text-gray-400 hover:text-primary-500 transition-colors">
                 <Phone className="h-5 w-5" />
@@ -158,8 +158,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm flex items-center">
-            © {currentYear} DevNove. Made with{' '}
-            <Heart className="h-4 w-4 text-red-500 mx-1 fill-current" /> by DevNove Team
+            © {currentYear} DevNova. Made with{' '}
+            <Heart className="h-4 w-4 text-red-500 mx-1 fill-current" /> by DevNova Team
           </p>
 
           {/* Social Links */}

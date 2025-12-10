@@ -38,8 +38,8 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@devnove.com',
-      link: 'mailto:hello@devnove.com',
+      value: 'hello@DevNova.com',
+      link: 'mailto:hello@DevNova.com',
     },
     {
       icon: Phone,
