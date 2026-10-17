@@ -3,43 +3,79 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Mockup relies on the browser's default line-height, not Tailwind's 1.5 */
+  html {
+    line-height: normal;
+  }
+
   body {
-    @apply bg-white text-gray-900;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
+    @apply m-0 bg-white font-sans text-ink;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-}
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-blue-600;
-  }
-
-  .card-hover {
-    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+  a:hover {
+    opacity: 0.85;
   }
 }
 
-html {
-  scroll-behavior: smooth;
+@keyframes dn-rise {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes dn-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes dn-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.55); }
+  100% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+}
+@keyframes dn-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+.dn-track { animation: dn-marquee 38s linear infinite; }
+.dn-pulse { animation: dn-pulse 1.8s ease-out infinite; }
+.dn-float { animation: dn-float 6s ease-in-out infinite; }
+.dn-float2 { animation: dn-float 7s ease-in-out 0.8s infinite; }
+
+.dn-shot svg { display: block; transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.dn-shot:hover svg { transform: scale(1.045); }
+
+.dn-ind { transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s; }
+.dn-ind:hover {
+  border-color: #B9C6FF;
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -24px rgba(10, 16, 34, 0.35);
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.dn-form input, .dn-form select, .dn-form textarea { transition: border-color 0.2s, box-shadow 0.2s; }
+.dn-form input:focus, .dn-form select:focus, .dn-form textarea:focus {
+  outline: none;
+  border-color: #2E5BFF;
+  box-shadow: 0 0 0 4px rgba(46, 91, 255, 0.15);
+}
+.dn-form ::placeholder { color: #8A93A6; }
+.dn-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+
+/* Scroll-driven reveal; browsers without support simply show content. */
+@supports (animation-timeline: view()) {
+  .rv {
+    animation: dn-rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 32%;
+  }
+  .rv2 { animation-range: entry 6% entry 38%; }
+  .rv3 { animation-range: entry 12% entry 44%; }
+  .rv4 { animation-range: entry 18% entry 50%; }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #0ea5e9;
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #0284c7;
+@media (prefers-reduced-motion: reduce) {
+  .rv, .dn-track, .dn-pulse, .dn-float, .dn-float2 { animation: none !important; }
 }

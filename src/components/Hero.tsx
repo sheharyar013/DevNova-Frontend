@@ -1,103 +1,74 @@
-import { ArrowRight, Sparkles, Zap, Code } from 'lucide-react'
+import { heroCards, heroStats, tech } from '../data/content'
+import Navbar from './Navbar'
+import { Container, Icon } from './ui'
 
-const Hero = () => {
-  return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50"
-    >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" />
-        <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float" style={{ animationDelay: '4s' }} />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center space-x-2 bg-primary-100 text-primary-700 px-4 py-2 rounded-full mb-8 animate-slide-down">
-          <Sparkles className="h-4 w-4" />
-          <span className="text-sm font-medium">Welcome to the future of software</span>
+const Hero = () => (
+  <section id="top" className="bg-ink text-white">
+    <Navbar />
+    <Container className="flex flex-wrap items-center gap-16 pb-24 pt-[88px]">
+      <div className="flex min-w-0 flex-[1_1_560px] flex-col gap-7">
+        <div className="inline-flex items-center gap-2.5 self-start rounded-full border border-edge bg-ink-card px-4 py-2 text-sm text-haze-100">
+          <span className="dn-pulse h-2 w-2 rounded-full bg-[#34D399]" />
+          Now taking new projects for Q4 2026
         </div>
-
-        {/* Main Heading */}
-        <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 animate-slide-up">
-          Transform Your Ideas
-          <br />
-          <span className="text-gradient">Into Digital Reality</span>
+        <h1 className="m-0 font-display text-[clamp(42px,5.6vw,76px)] font-extrabold leading-[1.04] tracking-[-0.035em]">
+          We design, build and grow <span className="text-periwinkle">digital products</span> for ambitious businesses.
         </h1>
-
-        {/* Subheading */}
-        <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto animate-fade-in">
-          We craft exceptional digital experiences through innovative software solutions
-          that drive your business forward.
+        <p className="m-0 max-w-[600px] text-[19px] leading-[1.65] text-haze-200">
+          DevNova Technology is a full-service software house. From custom software, web and mobile apps to AI
+          solutions, games and digital marketing — one team takes your idea from strategy to launch and beyond.
         </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-up">
-          <a
-            href="#contact"
-            className="group px-8 py-4 bg-primary-500 text-white rounded-full hover:bg-primary-600 transition-all flex items-center space-x-2 hover:scale-105 shadow-xl hover:shadow-primary-500/50"
-          >
-            <span className="font-semibold">Start Your Project</span>
-            <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+        <div className="flex flex-wrap gap-3.5">
+          <a href="#contact" className="rounded-[10px] bg-accent px-7 py-4 text-base font-semibold text-white">
+            Start Your Project
           </a>
-          <a
-            href="#portfolio"
-            className="px-8 py-4 bg-white text-gray-900 rounded-full hover:bg-gray-50 transition-all border-2 border-gray-200 hover:border-primary-500 hover:scale-105 shadow-lg font-semibold"
-          >
-            View Our Work
+          <a href="#products" className="rounded-[10px] border border-edge-strong px-7 py-[15px] text-base font-medium text-white">
+            Explore Our Products
           </a>
         </div>
-
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-20">
-          <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all card-hover border border-gray-100">
-            <div className="bg-gradient-to-br from-blue-500 to-primary-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-              <Code className="h-6 w-6 text-white" />
+        <div className="flex flex-wrap gap-8 border-t border-edge-soft pt-3">
+          {heroStats.map((stat) => (
+            <div key={stat.label} className="flex flex-col gap-1 pt-5">
+              <span className="font-display text-[30px] font-extrabold">{stat.value}</span>
+              <span className="text-sm text-haze-300">{stat.label}</span>
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Clean Code
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Well-structured, maintainable code following industry best practices
-            </p>
-          </div>
-
-          <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all card-hover border border-gray-100">
-            <div className="bg-gradient-to-br from-purple-500 to-pink-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-              <Zap className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Fast Delivery
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Agile development process ensuring quick turnaround times
-            </p>
-          </div>
-
-          <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all card-hover border border-gray-100">
-            <div className="bg-gradient-to-br from-orange-500 to-red-600 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-              <Sparkles className="h-6 w-6 text-white" />
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Innovation
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Cutting-edge technologies and creative problem-solving approaches
-            </p>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-          <div className="w-1.5 h-3 bg-gray-400 rounded-full mt-2 animate-pulse" />
-        </div>
+      <div className="grid min-w-0 flex-[1_1_440px] grid-cols-2 gap-4">
+        {heroCards.map((card) => (
+          <div
+            key={card.title}
+            className={`${card.float} flex flex-col gap-3.5 rounded-[18px] border border-edge bg-ink-card p-[26px] ${card.offset ? 'mt-9' : ''}`}
+          >
+            <div className={`flex h-11 w-11 items-center justify-center rounded-xl ${card.primary ? 'bg-accent text-white' : 'bg-ink-chip text-periwinkle'}`}>
+              <Icon d={card.icon} size={22} />
+            </div>
+            <div className="font-display text-lg font-bold">{card.title}</div>
+            <div className="text-sm leading-[1.55] text-haze-300">{card.body}</div>
+          </div>
+        ))}
       </div>
-    </section>
-  )
-}
+    </Container>
+  </section>
+)
+
+export const TechMarquee = () => (
+  <section className="overflow-hidden border-t border-edge-soft bg-ink-deep" aria-label="Technologies we use">
+    <div className="dn-track flex w-max">
+      {[...tech, ...tech].map((t, i) => (
+        <span
+          key={i}
+          aria-hidden={i >= tech.length}
+          className="flex items-center gap-7 whitespace-nowrap px-7 py-[22px] font-mono text-[15px] text-haze-400"
+        >
+          {t}
+          <span className="h-[5px] w-[5px] rounded-full bg-edge-strong" />
+        </span>
+      ))}
+    </div>
+  </section>
+)
 
 export default Hero

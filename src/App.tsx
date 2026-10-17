@@ -1,30 +1,26 @@
-import { useState, useEffect } from 'react'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import Portfolio from './components/Portfolio'
-import About from './components/About'
+import { TopBar } from './components/Navbar'
+import Hero, { TechMarquee } from './components/Hero'
+import Services, { Games, Products } from './components/Services'
+import Work from './components/Work'
+import Industries from './components/Industries'
+import Process from './components/Process'
+import WhyUs from './components/WhyUs'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
-  const [isScrolled, setIsScrolled] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar isScrolled={isScrolled} />
+    <div className="min-h-screen w-full bg-white">
+      <TopBar />
       <Hero />
+      <TechMarquee />
       <Services />
-      <Portfolio />
-      <About />
+      <Products />
+      <Games />
+      <Work />
+      <Industries />
+      <Process />
+      <WhyUs />
       <Contact />
       <Footer />
     </div>

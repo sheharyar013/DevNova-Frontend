@@ -7,47 +7,52 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+        accent: '#2E5BFF',
+        periwinkle: '#8EA6FF',
+        // Dark surfaces
+        ink: {
+          DEFAULT: '#0A1022',
+          deep: '#060A17',
+          card: '#111933',
+          chip: '#1F2A4D',
         },
-        dark: {
-          900: '#0a0a0a',
-          800: '#1a1a1a',
-          700: '#2a2a2a',
-        }
+        // Borders on dark surfaces
+        edge: {
+          soft: '#1C2540',
+          DEFAULT: '#26304D',
+          strong: '#34406A',
+        },
+        // Text on dark surfaces
+        haze: {
+          100: '#D5DAE5',
+          200: '#B4BCCD',
+          300: '#9AA4B8',
+          400: '#7F8AA3',
+        },
+        // Text on light surfaces
+        body: {
+          DEFAULT: '#5A6478',
+          soft: '#6B7487',
+          strong: '#3A4458',
+          deep: '#2A3348',
+        },
+        // Borders on light surfaces
+        line: {
+          soft: '#EDF0F5',
+          DEFAULT: '#E3E7EF',
+          input: '#D3D9E4',
+        },
+        // Light surfaces
+        mist: {
+          DEFAULT: '#F5F7FA',
+          chip: '#F3F5F9',
+          accent: '#EEF2FF',
+        },
       },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in',
-        'slide-up': 'slideUp 0.5s ease-out',
-        'slide-down': 'slideDown 0.5s ease-out',
-        'float': 'float 3s ease-in-out infinite',
-      },
-      keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        slideUp: {
-          '0%': { transform: 'translateY(100px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        slideDown: {
-          '0%': { transform: 'translateY(-100px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-20px)' },
-        },
+      fontFamily: {
+        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
     },
   },
